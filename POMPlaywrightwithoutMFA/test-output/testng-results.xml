@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-07-11T15:47:27 IST" name="Default suite" finished-at="2024-07-11T15:49:02 IST" duration-ms="94890">
+    <groups>
+    </groups>
+    <test started-at="2024-07-11T15:47:27 IST" name="Default test" finished-at="2024-07-11T15:49:02 IST" duration-ms="94890">
+      <class name="kpmg.qa.hsbc.test.BrokerNewRequestPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:kpmg.qa.hsbc.test.BrokerNewRequestPageTest@1c1bbc4e]" started-at="2024-07-11T15:47:27 IST" name="setup" finished-at="2024-07-11T15:47:43 IST" duration-ms="15333" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="pagenavigation()[pri:1, instance:kpmg.qa.hsbc.test.BrokerNewRequestPageTest@1c1bbc4e]" started-at="2024-07-11T15:47:43 IST" name="pagenavigation" finished-at="2024-07-11T15:48:22 IST" duration-ms="39498" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pagenavigation -->
+        <test-method signature="NewSRCreation(java.util.Map)[pri:2, instance:kpmg.qa.hsbc.test.BrokerNewRequestPageTest@1c1bbc4e]" started-at="2024-07-11T15:48:23 IST" name="NewSRCreation" data-provider="exceldata123" finished-at="2024-07-11T15:49:02 IST" duration-ms="38649" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{ApplicationExists=No, ProductName=Package Fixed 5 Year, FixedRateLock=Yes, Reqsubtype=New deal, Purpose=Owner occupied, RequestorAction=Accept Offer, RequestedEndrate=6.00, Value=1500000.00, limit=800000.00, ProspName=Manasa, Propertytype=Property, Reqtype=Pricing, CompOff=No}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NewSRCreation -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:kpmg.qa.hsbc.test.BrokerNewRequestPageTest@1c1bbc4e]" started-at="2024-07-11T15:49:02 IST" name="teardown" finished-at="2024-07-11T15:49:02 IST" duration-ms="274" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- kpmg.qa.hsbc.test.BrokerNewRequestPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [HSBC Regression PW Suite]" guice-stage="DEVELOPMENT" verbose="4">
+  <test thread-count="5" name="HSBC Home Page Test_chrome(failed)" verbose="4">
+    <classes>
+      <class name="kpmg.qa.hsbc.test.HomePagetest">
+        <methods>
+          <include name="homePageheader"/>
+          <include name="teardown"/>
+          <include name="homePageURLTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- kpmg.qa.hsbc.test.HomePagetest -->
+    </classes>
+  </test> <!-- HSBC Home Page Test_chrome(failed) -->
+</suite> <!-- Failed suite [HSBC Regression PW Suite] -->

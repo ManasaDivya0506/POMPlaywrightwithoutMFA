@@ -10,9 +10,8 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
+
+import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import static kpmg.qa.hsbc.factory.playwrightFactory.takeScreenshot;
 
@@ -29,29 +28,39 @@ public class ExtentReportListener implements ITestListener {
 	private static ExtentReports init() {
 
 		Path path = Paths.get(OUTPUT_FOLDER);
-		// if directory exists?
 		if (!Files.exists(path)) {
 			try {
 				Files.createDirectories(path);
 			} catch (IOException e) {
-				// fail to create directory
 				e.printStackTrace();
 			}
 		}
 		
 		extentReports = new ExtentReports();
 		ExtentSparkReporter reporter = new ExtentSparkReporter(OUTPUT_FOLDER + FILE_NAME);
+	/*	  ExtentReports extent = new ExtentReports();
+		ExtentSparkReporter htmlReporter = new ExtentSparkReporter("C:/Users/vmanasadivya/Desktop/eclispe files/POMPlaywrightwithoutMFA/build/report.html");
+		ExtentHtmlReporter rep = new ExtentHtmlReporter(OUTPUT_FOLDER + FILE_NAME); 
+		 htmlReporter.config().setDocumentTitle("Automation Test Results");
+	        htmlReporter.config().setReportName("Regression Test Suite");
+	      extent.attachReporter(htmlReporter);
+		*/
 		reporter.config().setReportName("HSBC Automation Test Results");
+		reporter.config().setDocumentTitle("Test Results");
 		extentReports.attachReporter(reporter);
+		ExtentTest test = extentReports.createTest("My test");
+			//	test.log(null, null)
 		extentReports.setSystemInfo("System", "Windows");
 		extentReports.setSystemInfo("Author", "Manasa");
 		extentReports.setSystemInfo("Build#", "1.1");
 		extentReports.setSystemInfo("Team", "HSBC");
 		extentReports.setSystemInfo("Customer Name", "MANASA");
 
-		//extentReports.setSystemInfo("ENV NAME", System.getProperty("env"));
+		extentReports.setSystemInfo("ENV NAME", System.getProperty("env"));
 
 		return extentReports;
+		
+	    //    return extent;
 	}
 
 	@Override

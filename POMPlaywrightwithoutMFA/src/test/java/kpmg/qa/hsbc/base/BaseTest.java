@@ -3,8 +3,10 @@ package kpmg.qa.hsbc.base;
 import java.util.Properties;
 
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
 import com.microsoft.playwright.Page;
@@ -35,6 +37,7 @@ public class BaseTest {
 	protected BrokerNewRequestPage BNewReqPage;
 	protected GetInputDataFromExcel inputdata;
 	protected MySRRequestpage mySRpage;
+	
 	@BeforeClass
 	public void setup()
 	{
@@ -48,4 +51,5 @@ public class BaseTest {
 	{
 		page.context().browser().close();
 	}
+	
 }

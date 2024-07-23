@@ -13,6 +13,7 @@ import jdk.internal.util.xml.impl.Input;
 import kpmg.qa.hsbc.base.BaseTest;
 import kpmg.qa.hsbc.excelutil.GetInputDataFromExcel;
 import kpmg.qa.hsbc.page.BrokerNewRequestPage;
+import kpmg.qa.hsbc.reports.ExtentTestNGListener;
 
 public class BrokerNewRequestPageTest extends BaseTest {
 	@Test(priority =1)
@@ -20,7 +21,7 @@ public class BrokerNewRequestPageTest extends BaseTest {
 	{
 		loginpage = homepage.selectBrokerpage();
 		bhomepage = loginpage.BrokerLogin(prop.getProperty("username").trim(), prop.getProperty("Password").trim());
-		bhomepage.BRequestClick();
+		//bhomepage.BRequestClick();
 		brequesthomepage= bhomepage.BRequestClick();
 		BNewReqPage = brequesthomepage.NewRequestbuttonclick();
 		
@@ -31,6 +32,8 @@ public class BrokerNewRequestPageTest extends BaseTest {
 
 	{	
 		BNewReqPage.newdealNoSRCreation(data);
+		 ExtentTestNGListener.test.get().info("Navigated to example.com");
+	    //    ExtentTestNGListener.test.get().info("Page title: " + title);
 	}
 	}
 		

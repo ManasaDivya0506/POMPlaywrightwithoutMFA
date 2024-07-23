@@ -20,7 +20,7 @@ public class playwrightFactory {
 	Playwright playwright;
 	Browser browser;
 	BrowserContext context;
-	Page page;
+	static Page page;
 	Properties prop;
 	private static ThreadLocal<Page> tlPage = new ThreadLocal<>();
 	public static Page getPage() {
@@ -77,10 +77,11 @@ public class playwrightFactory {
 		return prop;
 	}
 	public static String takeScreenshot() {
+		// page.waitForTimeout(3000);
 		String path = System.getProperty("user.dir") + "/screenshot/" + System.currentTimeMillis() + ".png";
 		//getPage().screenshot(new Page.ScreenshotOptions().setPath(Paths.get(path)).setFullPage(true));
 		
-		byte[] buffer = getPage().screenshot(new Page.ScreenshotOptions().setPath(Paths.get(path)).setFullPage(true));
+		byte[] buffer = page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(path)).setFullPage(true));
 		String base64Path = Base64.getEncoder().encodeToString(buffer);
 		
 		return base64Path;
